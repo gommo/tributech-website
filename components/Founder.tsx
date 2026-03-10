@@ -33,7 +33,7 @@ export function Founder() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Software engineer and startup founder with 15+ years building products
+          Software engineer and startup founder with 25+ years of experience building products
           that matter. Currently focused on AI-driven tools and helping teams
           ship faster.
         </motion.p>
