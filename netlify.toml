@@ -7,3 +7,9 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+
+# Unlisted proposal pages: keep them out of search engines entirely.
+[[headers]]
+  for = "/proposal/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
