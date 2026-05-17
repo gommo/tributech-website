@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
-  <title>BeeCastle Rewrite — Pitch Deck</title>
+  <title>BeeCastle Rewrite - Pitch Deck</title>
   <style>
     :root {
       --paper: #fbfaf6;
@@ -411,7 +411,7 @@
       right: 56px;
     }
 
-    /* Nav controls — fixed at bottom-center, hidden on print */
+    /* Nav controls -fixed at bottom-center, hidden on print */
     .nav-controls {
       position: fixed;
       bottom: 22px;
@@ -473,10 +473,10 @@
     .nav-dot:hover { background: var(--ink-dim); }
     .nav-dot.active { background: var(--honey); transform: scale(1.4); }
 
-    /* Hide nav while a slide is animating away — keeps the bar from "jumping" */
+    /* Hide nav while a slide is animating away -keeps the bar from "jumping" */
     .deck.animating + .nav-controls { pointer-events: none; }
 
-    /* On the dark cover slide, the controls keep their light style — looks good. */
+    /* On the dark cover slide, the controls keep their light style -looks good. */
 
     @media print {
       html, body { overflow: visible; height: auto; }
@@ -508,7 +508,7 @@
 
 <!-- ============================================== SLIDE 01: COVER -->
 <section class="slide cover">
-  <span class="slide-num mono">01 / 15</span>
+  <span class="slide-num mono">01 / 13</span>
   <div>
     <div class="logo-wordmark">
       <span class="logo-mark">B</span>
@@ -518,139 +518,199 @@
     <h1 class="title">A modern stack.<br/>One repo.<br/><span class="honey">Live this year.</span></h1>
     <p class="lead">
       Retire an eleven-repo, event-sourced sprawl across three languages. Re-ship BeeCastle as the
-      <strong>account intelligence layer for MSPs</strong> — live M365 + ConnectWise data,
+      <strong>account intelligence layer for MSPs</strong> - live productivity-suite + PSA data,
       real health scores, and a customer's AI agent answering
-      <em>"which clients need attention?"</em> — inside a single MVP cycle.
+      <em>"which clients need attention?"</em> - inside a single MVP cycle.
     </p>
     <div class="meta">
       <div><strong>For</strong>BeeCastle</div>
       <div><strong>From</strong>Colin Goudie</div>
-      <div><strong>Date</strong>15 May 2026</div>
+      <div><strong>Date</strong>May 2026</div>
       <div><strong>Decision</strong>Go / no-go</div>
     </div>
   </div>
 </section>
 
 <!-- ============================================== SLIDE 02: WHY NOW -->
-<section class="slide">
-  <span class="slide-num mono">02 / 15</span>
-  <p class="eyebrow">The case</p>
-  <h2 class="section">Why the rewrite is overdue</h2>
-  <p class="lead">
-    Eight years of accretion across eleven repos and a private event-sourcing layer
-    almost nobody else maintains. Every new feature pays a tax against that surface.
+<section class="slide" style="background: var(--gunmetal); color: var(--gunmetal-soft);">
+  <span class="slide-num mono" style="color: var(--ink-faint);">02 / 13</span>
+  <p class="eyebrow">Why now</p>
+  <h2 class="section" style="color:#fff;">AI can save it.</h2>
+  <p class="lead" style="color: var(--gunmetal-soft);">
+    Eight years of accretion across eleven repos and an event-sourcing layer almost nobody
+    maintains. What changed: AI-paired build makes a clean rebuild fast and affordable - on a stack AI can keep alive. The moment is now.
   </p>
 
   <div class="grid grid-3" style="margin-top: 28px;">
-    <div class="card">
-      <div class="stat-label">Lines of code, retired</div>
-      <div class="stat">334K</div>
-      <p class="small">Across 11 repos · 5,295 files · 7,400+ commits since May 2018.</p>
+    <div class="card dark" style="background: var(--gunmetal-2); border-color:#3a3f47;">
+      <div class="stat-label" style="color: var(--ink-faint);">Lines of code, retired</div>
+      <div class="stat" style="color:#fff;">334K</div>
+      <p class="small" style="color: var(--gunmetal-soft);">Across 11 repos · 5,295 files · 7,400+ commits since May 2018.</p>
     </div>
-    <div class="card">
-      <div class="stat-label">Years of accretion</div>
-      <div class="stat">8</div>
-      <p class="small">beecastle-web alone is 220K LOC; bc-notifications another 66K — behaviour nobody wrote a spec for.</p>
+    <div class="card dark" style="background: var(--gunmetal-2); border-color:#3a3f47;">
+      <div class="stat-label" style="color: var(--ink-faint);">Years of accretion</div>
+      <div class="stat" style="color:#fff;">8</div>
+      <p class="small" style="color: var(--gunmetal-soft);">beecastle-web alone is 220K LOC; bc-notifications another 66K - behaviour nobody wrote a spec for.</p>
     </div>
-    <div class="card honey">
-      <div class="stat-label">Rebuild cost, the old way</div>
-      <div class="stat honey">$12M</div>
-      <p class="small">COCOMO estimate for the retired surface — ~30 person-years, ~35 months. The accumulated liability, not a quote.</p>
+    <div class="card" style="background: rgba(255,204,0,0.10); border:1px solid var(--honey);">
+      <div class="stat-label" style="color: var(--honey);">Rebuild cost, the old way</div>
+      <div class="stat" style="color: var(--honey);">$12M</div>
+      <p class="small" style="color: var(--gunmetal-soft);">COCOMO estimate for the retired surface - ~30 person-years, ~35 months. The accumulated liability, not a quote.</p>
     </div>
   </div>
 
-  <div class="note" style="margin-top: 28px;">
-    <strong>And it doesn't sit still.</strong> Keeping it running leans on <strong>614 one-off
-    <span class="mono">mongo-queries</span> scripts</strong> and <strong>36 recurring support-case folders</strong> —
-    a standing manual tax just to operate it. The rewrite is what ends that tax.
+  <div class="note" style="margin-top: 28px; background: rgba(196,59,59,0.12); border-left: 3px solid var(--danger); color: var(--gunmetal-soft);">
+    <strong style="color:#fff;">And it's bleeding.</strong> Heavy customer churn, continual downtime,
+    missed syncs - held together by a <strong style="color:#fff;">skeleton crew</strong> (realistically
+    one part-time engineer). It isn't maintainable as-is; the rewrite is what makes it runnable by a small team.
+  </div>
+
+  <div class="note" style="margin-top: 16px; background: rgba(255,204,0,0.08); border-left: 3px solid var(--honey); color: var(--gunmetal-soft);">
+    <strong style="color:#fff;">Why I built it first.</strong> After our call last week - you open to a rewrite - I pulled together what I'd already been proving out this year (the new O365 → Lambda/SQS sync, the cumulative tests) and, with how fast LLM-paired build now moves, went ahead and <strong style="color:#fff;">spiked it to prove the approach</strong>. It works - the next slides show it running.
   </div>
 </section>
 
 <!-- ============================================== SLIDE 03: WHAT THE REWRITE DOES -->
 <section class="slide">
-  <span class="slide-num mono">03 / 15</span>
+  <span class="slide-num mono">03 / 13</span>
   <p class="eyebrow">The architecture</p>
   <h2 class="section">A CQRS microservice sprawl → one modern monolith</h2>
-  <p class="lead">
-    Eleven repos glued together by a bespoke event-sourcing bus nobody else runs.
-    The rewrite is mostly a modern monolith — cloud-native only where it earns it.
-  </p>
+  <p class="lead" style="margin-bottom: 0;">Eleven repos glued by a bespoke event bus → one modern monolith.</p>
 
-  <div class="compare" style="margin-top: 22px;">
-    <div class="card muted">
-      <h3 style="margin-bottom: 14px;">Today — event-sourced sprawl</h3>
-      <ul class="clean">
-        <li><strong>bc-es</strong>Bespoke event store + CQRS — the glue nobody else maintains</li>
-        <li><strong>bc-api</strong>Node REST gateway</li>
-        <li><strong>bc-notifications</strong>Clojure jobs + scoring</li>
-        <li><strong>3× ClojureScript Lambdas</strong>M365 · ConnectWise · cron webhooks</li>
-        <li><strong>beecastle-web</strong>Separate React frontend (220K LOC)</li>
-        <li><strong>bc-auth · bc-admin-panel · loaders · infra</strong>Keycloak + the long tail</li>
-        <li><strong style="color:var(--ink);">11 repos · 3 languages</strong>An event bus carrying every state change between them</li>
+  <div class="compare" style="margin-top: 12px;">
+    <div class="card muted" style="padding: 14px 18px;">
+      <h3 style="margin-bottom: 6px;">Today - event-sourced sprawl</h3>
+      <ul class="clean" style="font-size: 13px;">
+        <li style="padding:4px 0;"><strong>bc-es</strong>Bespoke event store + CQRS - glue nobody else maintains</li>
+        <li style="padding:4px 0;"><strong>3× ClojureScript Lambdas</strong>M365 · ConnectWise · cron · + bc-notifications (Clojure)</li>
+        <li style="padding:4px 0;"><strong>beecastle-web</strong>Separate React frontend (220K LOC)</li>
+        <li style="padding:4px 0;"><strong style="color:var(--ink);">11 repos · 3 languages</strong>+ bc-api, Keycloak, admin, loaders - an event bus between them all</li>
       </ul>
     </div>
     <div class="arrow mono">→</div>
-    <div class="card dark">
-      <h3 style="margin-bottom: 14px;">After — a modern monolith</h3>
-      <ul class="clean" style="color: var(--gunmetal-soft);">
-        <li style="border-color: var(--gunmetal-2);"><strong style="color:white;">beecastle-server</strong>One Next.js app: UI + API + workers</li>
-        <li style="border-color: var(--gunmetal-2);"><strong style="color:white;">Postgres 18 + Drizzle</strong>Direct writes + audit_log — no event store</li>
-        <li style="border-color: var(--gunmetal-2);"><strong style="color:white;">Better Auth</strong>Replaces Keycloak — identity in our Postgres</li>
-        <li style="border-color: var(--gunmetal-2);"><strong style="color:white;">BullMQ + Redis</strong>Background jobs in-repo, Vitest-testable</li>
-        <li style="border-color: var(--gunmetal-2);"><strong style="color:white;">Lambda + SQS — only at the edge</strong>Durable webhook ingest; everything else is the monolith</li>
-        <li style="border-color: var(--gunmetal-2);"><strong style="color:white;">One repo · one runtime · one CI</strong>Strict TypeScript end-to-end</li>
+    <div class="card dark" style="padding: 14px 18px;">
+      <h3 style="margin-bottom: 6px;">After - a modern monolith</h3>
+      <ul class="clean" style="color: var(--gunmetal-soft); font-size: 13px;">
+        <li style="border-color: var(--gunmetal-2); padding:4px 0;"><strong style="color:white;">beecastle-server</strong>One Next.js app: UI + API + workers</li>
+        <li style="border-color: var(--gunmetal-2); padding:4px 0;"><strong style="color:white;">Postgres 18 + Drizzle</strong>Direct writes + audit_log - no event store</li>
+        <li style="border-color: var(--gunmetal-2); padding:4px 0;"><strong style="color:white;">Lambda + SQS - only at the edge</strong>Durable webhook ingest · BullMQ in-repo</li>
+        <li style="border-color: var(--gunmetal-2); padding:4px 0;"><strong style="color:white;">1 repo · 1 runtime · 1 CI</strong>Strict TypeScript · Better Auth replaces Keycloak</li>
       </ul>
     </div>
   </div>
 
-  <div class="note" style="margin-top: 24px;">
-    CQRS + event-sourcing solved a problem BeeCastle doesn't have. The actual shape —
-    relationship intelligence on M365 + ConnectWise — is a monolith with cloud-native
-    used only where durability genuinely demands it: inbound webhooks.
+  <div class="grid grid-2" style="margin-top: 14px; align-items: start;">
+    <div class="card" style="padding: 16px 18px;">
+      <h3 style="margin-bottom: 2px;">Built on the most popular stack in software</h3>
+      <p class="small" style="margin: 0 0 6px; color: var(--ink-dim);">% of pro developers using · Stack Overflow Developer Survey 2025 (n≈49k)</p>
+      <svg viewBox="0 0 520 184" width="100%" role="img" aria-label="Framework popularity - new stack vs legacy" style="font-family: -apple-system, BlinkMacSystemFont, 'Plus Jakarta Sans', system-ui, sans-serif; display:block;">
+        <g font-size="12.5" fill="#5c584b">
+          <text x="116" y="26" text-anchor="end">PostgreSQL</text>
+          <rect x="124" y="14" width="372" height="16" rx="4" fill="#f1ede1"/>
+          <rect x="124" y="14" width="345" height="16" rx="4" fill="#ffcc00"/>
+          <text x="476" y="26" font-weight="700" fill="#1a1a1a">55.6%</text>
+
+          <text x="116" y="53" text-anchor="end">Node.js</text>
+          <rect x="124" y="41" width="372" height="16" rx="4" fill="#f1ede1"/>
+          <rect x="124" y="41" width="302" height="16" rx="4" fill="#ffcc00"/>
+          <text x="433" y="53" font-weight="700" fill="#1a1a1a">48.7%</text>
+
+          <text x="116" y="80" text-anchor="end">React</text>
+          <rect x="124" y="68" width="372" height="16" rx="4" fill="#f1ede1"/>
+          <rect x="124" y="68" width="277" height="16" rx="4" fill="#ffcc00"/>
+          <text x="408" y="80" font-weight="700" fill="#1a1a1a">44.7%</text>
+
+          <text x="116" y="107" text-anchor="end">TypeScript</text>
+          <rect x="124" y="95" width="372" height="16" rx="4" fill="#f1ede1"/>
+          <rect x="124" y="95" width="270" height="16" rx="4" fill="#ffcc00"/>
+          <text x="401" y="107" font-weight="700" fill="#1a1a1a">43.6%</text>
+
+          <text x="116" y="134" text-anchor="end">Next.js</text>
+          <rect x="124" y="122" width="372" height="16" rx="4" fill="#f1ede1"/>
+          <rect x="124" y="122" width="129" height="16" rx="4" fill="#ffcc00"/>
+          <text x="260" y="134" font-weight="700" fill="#1a1a1a">20.8%</text>
+
+          <line x1="124" y1="149" x2="496" y2="149" stroke="#e6e2d6" stroke-dasharray="3 3"/>
+          <text x="116" y="168" text-anchor="end" fill="#c43b3b">Clojure*</text>
+          <rect x="124" y="156" width="372" height="16" rx="4" fill="#f1ede1"/>
+          <rect x="124" y="156" width="13" height="16" rx="4" fill="#c43b3b"/>
+          <text x="144" y="168" font-weight="700" fill="#c43b3b">~2%</text>
+        </g>
+      </svg>
+      <p class="small" style="margin: 4px 0 0; color: var(--ink-faint);">*Legacy core. ClojureScript &lt;1% - barely registers.</p>
+    </div>
+    <div class="card honey" style="padding: 16px 18px;">
+      <h3>Bus-factor &amp; speed, by construction</h3>
+      <p class="small" style="margin: 8px 0 0;">
+        The rebuild's stack <strong>is the industry default</strong> - the largest hiring pool on
+        earth, so it's safe if I'm not here. It's also what LLM coding agents are most
+        <strong>fluent</strong> in (the most training data) - precisely why this build moves this fast.
+        The legacy Clojure core sits at <strong>~2%</strong>: niche to hire for, slow for AI to touch.
+      </p>
+      <p class="small" style="margin: 10px 0 0; color: var(--gold-9);">CQRS + event-sourcing solved a problem BeeCastle doesn't have - a monolith on the default stack does.</p>
+    </div>
   </div>
 </section>
 
-<!-- ============================================== SLIDE 04: FOUNDATIONS VS LEGACY -->
+<!-- ============================================== SLIDE 04: CUSTOMER-FELT PAIN -->
 <section class="slide">
-  <span class="slide-num mono">04 / 15</span>
-  <p class="eyebrow">Where the pain goes</p>
-  <h2 class="section">The failures that just stop.</h2>
+  <span class="slide-num mono">04 / 13</span>
+  <p class="eyebrow">The real problem</p>
+  <h2 class="section">The rewrite removes the pain customers already feel.</h2>
   <p class="lead">
-    Not engineering nice-to-haves — these are the outages, dropped syncs and midnight
-    data-fixes hitting your customers and your support team <em>today</em>. The rewrite
-    designs the whole class out, it doesn't patch it.
+    BeeCastle's biggest problem is not "old tech". It is that core product behaviours are
+    <strong>fragile, expensive, and too dependent on manual support</strong>. The rewrite
+    replaces hidden failure modes with observable, self-serve, auditable systems.
   </p>
 
   <div class="grid grid-3" style="margin-top: 24px;">
-    <div class="card">
-      <h3>Syncs that silently don't</h3>
-      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Legacy</span> CW/Halo changes just don't appear — Landmark products, VITG/Ultra resyncs, "data not loading." Found when the customer complains.</p>
-      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Now</span> durable SQS ingest + idempotent normalizers + retries — every change lands, or dead-letters loudly.</p>
+    <div class="card" style="border-top: 3px solid var(--danger);">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></span>
+        <h3 style="margin:0;">Silent sync failures</h3>
+      </div>
+      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Data goes stale and customers find it first.</p>
+      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Retryable, observable syncs.</p>
     </div>
-    <div class="card">
-      <h3>Edits that don't propagate</h3>
-      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Legacy</span> Blue Arc renamed Gold SLA→MSA — old names kept showing; "product stack disappeared."</p>
-      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Now</span> one source of truth in Postgres, written on change — no projection lag, no ghost data.</p>
+    <div class="card" style="border-top: 3px solid var(--danger);">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"></rect><rect x="2" y="14" width="20" height="8" rx="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg></span>
+        <h3 style="margin:0;">Services stop</h3>
+      </div>
+      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Queues/workers die and features disappear.</p>
+      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Fewer services, health checks, dead letters.</p>
     </div>
-    <div class="card">
-      <h3>Revenue that won't reconcile</h3>
-      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Legacy</span> Landmark/Ultra revenue discrepancies, empty sales sections, NFP zero-price edge cases.</p>
-      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Now</span> invoice→revenue normalizers, deterministic and test-covered against real data.</p>
+    <div class="card" style="border-top: 3px solid var(--danger);">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg></span>
+        <h3 style="margin:0;">Mongo cost trap</h3>
+      </div>
+      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Huge storage, expensive Atlas bill, hard to reduce.</p>
+      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Product-shaped Postgres model.</p>
     </div>
-    <div class="card">
-      <h3>Accounts that "go dead"</h3>
-      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Legacy</span> Danet looked dead — a stray <span class="mono">restrictFinancialViews</span> filter + duplicate user. Users can't invite / log in / connect M365.</p>
-      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Now</span> Better Auth + Postgres RLS — visibility is a database rule, not a fragile query filter.</p>
+    <div class="card" style="border-top: 3px solid var(--danger);">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"></polyline><line x1="4" y1="20" x2="21" y2="3"></line><polyline points="21 16 21 21 16 21"></polyline><line x1="15" y1="15" x2="21" y2="21"></line><line x1="4" y1="4" x2="9" y2="9"></line></svg></span>
+        <h3 style="margin:0;">Revenue mismatch</h3>
+      </div>
+      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> PSA truth and BeeCastle truth drift apart.</p>
+      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Deterministic revenue pipeline.</p>
     </div>
-    <div class="card">
-      <h3>The backend taking itself down</h3>
-      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Legacy</span> the <span class="mono">fill-hot-cache</span> cron stacking parallel COLLSCANs on 6.3M interactions; "Oops, we can't load this page."</p>
-      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Now</span> indexed Postgres + bounded, re-entrant jobs — no scan-storm crons.</p>
+    <div class="card" style="border-top: 3px solid var(--danger);">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></span>
+        <h3 style="margin:0;">PSA sync not self-serve</h3>
+      </div>
+      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Support/devs become the integration UI.</p>
+      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Admin sync controls and repair flows.</p>
     </div>
-    <div class="card">
-      <h3>Migrations fixed by hand</h3>
-      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Legacy</span> every CW→Halo move (Turrito, Dial a Nerd) = manual dedupe via 614 scripts &amp; 36 case folders.</p>
-      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Now</span> idempotent upserts keyed on external IDs + an audit trail — re-syncs converge, they don't duplicate.</p>
+    <div class="card" style="border-top: 3px solid var(--danger);">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
+        <h3 style="margin:0;">Support login is broken</h3>
+      </div>
+      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Shared accounts, 1Password hacks, poor auditability.</p>
+      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Proper impersonation and account switching.</p>
     </div>
   </div>
 
@@ -661,45 +721,48 @@
 
 <!-- ============================================== SLIDE 05: SPIKED FIRST -->
 <section class="slide">
-  <span class="slide-num mono">05 / 15</span>
+  <span class="slide-num mono">05 / 13</span>
   <p class="eyebrow">De-risked before the ask</p>
   <h2 class="section">We didn't pitch this cold. We spiked it.</h2>
   <p class="lead">
-    Before asking you to commit, we built spikes against the parts that actually carry
-    risk — multi-tenant isolation, live PSA sync, the two-org demo posture. The point
-    wasn't to deliver scope. It was to prove the hard parts work.
+    Before asking you to commit, we spiked the parts that carry real risk - multi-tenant
+    isolation, ConnectWise + Microsoft 365 sync, the MCP/AI surface, scoring, the two-org
+    posture. Not finished - <strong>confirmed working</strong>. We billed a sliver and sank
+    the rest in ourselves to make the first bet.
   </p>
 
   <div class="grid grid-3" style="margin-top: 24px;">
-    <div class="card">
-      <div class="stat-label">Spike effort</div>
-      <div class="stat">~24<span class="unit">hrs</span></div>
-      <p class="small">Exploratory build across the risk areas.</p>
-    </div>
     <div class="card honey">
       <div class="stat-label">Billed</div>
-      <div class="stat honey">~8<span class="unit">hrs</span></div>
-      <p class="small">The rest is on us — proof before the ask.</p>
+      <div class="stat honey">~12<span class="unit">hrs</span></div>
+      <p class="small">A sliver - all we charged.</p>
+    </div>
+    <div class="card">
+      <div class="stat-label">Sank in ourselves</div>
+      <div class="stat">~30<span class="unit">hrs+</span></div>
+      <p class="small">Uncharged - building, de-risking &amp; proving it before the ask.</p>
     </div>
     <div class="card">
       <div class="stat-label">Result</div>
-      <div class="stat success">Green</div>
-      <p class="small">Every risk area came back positive.</p>
+      <div class="stat success">Confirmed</div>
+      <p class="small">Every risk area proven - working, not finished.</p>
     </div>
   </div>
 
   <div style="margin-top: 32px;">
-    <h3 style="margin-bottom: 14px;">What the spikes proved — running, not slideware</h3>
+    <h3 style="margin-bottom: 14px;">Confirmed working in a spike - running, not slideware</h3>
     <div class="grid grid-2">
       <ul class="clean">
-        <li><span class="check">✓</span> <strong>Multi-tenant isolation</strong> — Better Auth + Postgres RLS enforcing the tenant boundary at the database</li>
-        <li><span class="check">✓</span> <strong>Live ConnectWise sync</strong> — real companies + contacts through the new pipeline</li>
-        <li><span class="check">✓</span> <strong>Admin + impersonation</strong> — staff console, org switching, audit trail</li>
+        <li><span class="check">✓</span> <strong>Multi-tenant isolation</strong> - Better Auth + Postgres RLS, the tenant boundary enforced at the database</li>
+        <li><span class="check">✓</span> <strong>ConnectWise sync</strong> - real companies, contacts <strong>+ tickets</strong> through the new pipeline <em>(the tickets Dave's been asking about)</em></li>
+        <li><span class="check">✓</span> <strong>Microsoft 365 sync</strong> - inbox connect + Graph; real engagement flowing in</li>
+        <li><span class="check">✓</span> <strong>Scoring</strong> - health-score pipeline spiked against real interactions</li>
       </ul>
       <ul class="clean">
-        <li><span class="check">✓</span> <strong>Two orgs, one codebase</strong> — seeded mock org + real-customer org, identical queries</li>
-        <li><span class="check">✓</span> <strong>Design system</strong> — wrapped Mantine, domain primitives, dark AppShell</li>
-        <li><span class="check">✓</span> <strong>Local prod parity</strong> — Postgres 18, Redis, SQS, mail — reproducible</li>
+        <li><span class="check">✓</span> <strong>MCP / AI surface</strong> - BeeCastle reachable from Claude &amp; Codex; endpoint stood up</li>
+        <li><span class="check">✓</span> <strong>Admin + impersonation</strong> - staff console, org switching, audit trail</li>
+        <li><span class="check">✓</span> <strong>Two orgs, one codebase</strong> - seeded mock org + real-customer org, identical queries</li>
+        <li><span class="check">✓</span> <strong>Local prod parity</strong> - Postgres 18, Redis, SQS, mail - reproducible</li>
       </ul>
     </div>
   </div>
@@ -707,102 +770,63 @@
 
 <!-- ============================================== SLIDE 06: DEMO VIDEO -->
 <section class="slide">
-  <span class="slide-num mono">06 / 15</span>
+  <span class="slide-num mono">06 / 13</span>
   <p class="eyebrow">Proof, not a promise</p>
   <h2 class="section">We didn't just talk about it. Watch it run.</h2>
   <p class="lead">
-    The spike isn't a diagram. This is the running app — multi-tenant, real
-    ConnectWise data, admin + impersonation — recorded end to end.
+    The spike isn't a diagram. This is the running app - multi-tenant, real
+    ConnectWise data, admin + impersonation - recorded end to end.
   </p>
 
-  <!-- When demo.mp4 exists, swap the <img> for:
-       <video src="assets/demo.mp4" controls playsinline preload="metadata"
-              poster="assets/demo-poster.svg"
-              style="width:100%;height:100%;object-fit:cover;display:block;"></video> -->
-  <div style="margin-top: 20px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 14px 40px rgba(0,0,0,0.16); height: clamp(280px, 56vh, 560px); background: var(--gunmetal);">
-    <img src="assets/demo-poster.svg" alt="Demo video — recording to come" style="width:100%; height:100%; object-fit:cover; display:block;" />
-  </div>
+  <a href="https://screen.studio/share/rbzfCNi0" target="_blank" rel="noopener" style="display:block; margin-top: 20px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 14px 40px rgba(0,0,0,0.16); height: clamp(280px, 56vh, 560px); background: var(--gunmetal); position: relative;">
+    <img src="assets/demo-poster.svg" alt="Play the 2-minute demo" style="width:100%; height:100%; object-fit:cover; display:block;" />
+    <span style="position:absolute; right:16px; bottom:14px; font-size:12px; color:#C7CBD1; font-family:'Geist Mono',ui-monospace,monospace; letter-spacing:0.5px;">opens in Screen Studio ↗</span>
+  </a>
 
   <p class="small" style="margin-top: 16px;">
-    60–90 seconds, no edits. Proof the approach works — the full build scope still follows in its own right.
+    ~2 min, edited &amp; sped up. Proof the approach works - the full build scope still follows in its own right.
   </p>
 </section>
 
-<!-- ============================================== SLIDE 07: REMAINING BUILD -->
+<!-- ============================================== SLIDE 07: MVP SCOPE -->
 <section class="slide">
-  <span class="slide-num mono">07 / 15</span>
-  <p class="eyebrow">Scope, sized</p>
-  <h2 class="section">The whole build, in five workstreams.</h2>
-  <p class="lead">
-    Not open-ended. <strong>~200 hours of build (~250 with contingency)</strong> across five
-    workstreams — the complete scope, independent of the spikes. Here's why it lands faster
-    than that sounds, and how it maps to the milestone dates.
-  </p>
-
-  <div class="grid grid-2" style="margin-top: 24px;">
-    <div class="card">
-      <h3>Five workstreams</h3>
-      <table style="margin-top: 12px;">
-        <thead><tr><th>Workstream</th><th class="num">Hours</th></tr></thead>
-        <tbody>
-          <tr><td>Schema, seeder &amp; scoring engine</td><td class="num">~30</td></tr>
-          <tr><td>ConnectWise + M365 + SQS pipeline</td><td class="num">~60</td></tr>
-          <tr><td>Product UI — companies, dashboard, settings, admin</td><td class="num">~45</td></tr>
-          <tr><td>API + MCP AI surface</td><td class="num">~20</td></tr>
-          <tr><td>Hardening, tests, deploy, bug-bash</td><td class="num">~45</td></tr>
-          <tr class="total"><td>Build subtotal</td><td class="num">~200</td></tr>
-          <tr class="total honey"><td>With contingency</td><td class="num">~250</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <div>
-      <div class="card honey">
-        <h3>How it maps to the calendar</h3>
-        <p class="small" style="margin: 6px 0 0;">≈8 weeks of <strong>focused build effort</strong>. Delivered part-time across the milestones — <strong>M1 Jun 2026, M2 Sep 2026, real customer live ~Nov 2026</strong> (slide 12). Effort weeks ≠ calendar weeks; the dates are what we commit to.</p>
-      </div>
-      <div class="card" style="margin-top: 16px;">
-        <h3>Why it lands faster than it sounds</h3>
-        <ul class="clean">
-          <li>~25 architecture decisions already captured — RLS, ALS, integration boundary, design system. The foundations aren't re-argued.</li>
-          <li>Component scaffolding exists — the UI work is wiring, not new design.</li>
-          <li>Legacy code is read-accessible — port behaviour, don't re-discover it.</li>
-          <li>Same engineer + same AI pairing — no context switch.</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================== SLIDE 08: MVP SCOPE -->
-<section class="slide">
-  <span class="slide-num mono">08 / 15</span>
+  <span class="slide-num mono">07 / 13</span>
   <p class="eyebrow">The MVP</p>
-  <h2 class="section">Two orgs, side by side.</h2>
+  <h2 class="section">Proven on real accounts - not just demos.</h2>
   <p class="lead">
-    One <strong>real customer org</strong> on live M365 + ConnectWise data, alongside the
-    <strong>BeeCastle org</strong> seeded with realistic mock data. Same UI, same queries —
-    sales conversations look populated from day one.
+    Three ways data reaches the new platform - so it's <strong>validated, not theoretical</strong>,
+    all through the same UI, queries and scoring. Mock data for demos; a clean new-OAuth pathway
+    for new orgs; and a legacy pathway that reuses existing O365 / ConnectWise tokens to run
+    <strong>real legacy customer accounts</strong> on the new platform - transparently, zero
+    disruption, no action from them.
   </p>
 
-  <div class="grid grid-2" style="margin-top: 28px;">
-    <div class="card">
-      <span class="pill honey">Real customer org</span>
-      <h3 style="margin-top: 12px;">Live data</h3>
-      <ul class="clean">
-        <li><strong>Microsoft 365</strong>Mail + calendar → interactions</li>
-        <li><strong>ConnectWise</strong>Companies + contacts + agreements + invoices → monthly revenue</li>
-        <li><strong>Scoring v1</strong>Health score per company — daily + on interaction write</li>
-        <li><strong>Also in their AI</strong>Same data, queryable from Claude / Codex / ChatGPT</li>
-      </ul>
-    </div>
+  <div class="grid grid-3" style="margin-top: 24px;">
     <div class="card">
       <span class="pill info">BeeCastle org</span>
       <h3 style="margin-top: 12px;">Mock data, same shape</h3>
       <ul class="clean">
-        <li><strong>~20 companies</strong>Tiered, scored, with revenue history</li>
-        <li><strong>~80 contacts</strong>Mapped to companies, with roles</li>
+        <li><strong>~20 companies · ~80 contacts</strong>Tiered, scored, with roles</li>
         <li><strong>~500 interactions</strong>Over ~90 days, deterministic seed</li>
-        <li><strong>~6 months revenue rollups</strong>Realistic trend lines for the dashboards</li>
+        <li><strong>~6 months revenue</strong>Demos look populated from day one</li>
+      </ul>
+    </div>
+    <div class="card">
+      <span class="pill">New orgs</span>
+      <h3 style="margin-top: 12px;">New pathway</h3>
+      <ul class="clean">
+        <li><strong>Fresh OAuth</strong>M365 + ConnectWise connected the clean way</li>
+        <li><strong>Self-serve connect</strong>The go-forward flow every new customer uses</li>
+        <li><strong>Tickets + revenue</strong>Real data from first sync</li>
+      </ul>
+    </div>
+    <div class="card honey">
+      <span class="pill honey">Legacy accounts</span>
+      <h3 style="margin-top: 12px;">Migrated tokens - transparent</h3>
+      <ul class="clean">
+        <li><strong>Reuse legacy tokens</strong>Existing O365 / CW integrations, no re-auth</li>
+        <li><strong>Real production data</strong>Read-only into the new platform</li>
+        <li><strong>Zero disruption</strong>Customer keeps running on legacy - never knows. True end-to-end validation before any switch.</li>
       </ul>
     </div>
   </div>
@@ -818,21 +842,22 @@
   </div>
 
   <p class="small" style="margin-top: 24px;">
-    <strong>Out of MVP scope</strong> — Stripe billing, Mongo data migration, whitespace classifier,
+    <strong>Out of MVP scope</strong> - Stripe billing, Mongo data migration, whitespace classifier,
     full Sales dashboard, opportunity editing, LLM sentiment enrichment, outbound notifications. All post-MVP.
   </p>
 </section>
 
-<!-- ============================================== SLIDE 09: AI INTELLIGENCE -->
+<!-- ============================================== SLIDE 08: AI INTELLIGENCE -->
 <section class="slide">
-  <span class="slide-num mono">09 / 15</span>
+  <span class="slide-num mono">08 / 13</span>
   <p class="eyebrow">Two birds, one stone</p>
-  <h2 class="section">Ship what they expect. Win on what they don't.</h2>
+  <h2 class="section">AI Intelligence</h2>
+  <p class="lead" style="margin-bottom: 10px;"><strong>Ship what they expect. Win on what they don't.</strong></p>
   <p class="lead">
-    The rebuild ships the product today's users expect — a clean, fast app: dashboards,
+    The rebuild ships the product today's users expect - a clean, fast app: dashboards,
     subscriptions, email alerts. That alone <strong>stops the churn and keeps the base</strong>.
     The strategic strength is the <em>same data</em>, natively available inside the AI tools
-    your team already uses — Claude, Codex, ChatGPT. One rebuild, both payoffs.
+    your team already uses - Claude, Codex, ChatGPT. One rebuild, both payoffs.
   </p>
 
   <!-- Mockups intentionally large. Assets in ./assets/ (see assets/README.md).
@@ -843,35 +868,35 @@
         <img src="assets/beecastle-ai-claude.png" alt="BeeCastle connector in Claude" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;" onerror="this.style.display='none';this.parentElement.querySelector('.ph').style.display='flex';" />
         <div class="ph" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center; text-align:center; padding:12px;"><span class="small mono">[ assets/beecastle-ai-claude.png missing ]</span></div>
       </div>
-      <figcaption class="small" style="margin-top:10px; text-align:center;">Already listed — <strong>Claude</strong> connector directory</figcaption>
+      <figcaption class="small" style="margin-top:10px; text-align:center;">Already listed - <strong>Claude</strong> connector directory</figcaption>
     </figure>
     <figure style="margin:0;">
       <div style="position:relative; border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:0 12px 32px rgba(0,0,0,0.14); height: clamp(220px, 40vh, 400px); background:var(--paper-2);">
         <img src="assets/beecastle-ai-codex.png" alt="BeeCastle plugin in Codex" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;" onerror="this.style.display='none';this.parentElement.querySelector('.ph').style.display='flex';" />
         <div class="ph" style="display:none; position:absolute; inset:0; align-items:center; justify-content:center; text-align:center; padding:12px;"><span class="small mono">[ assets/beecastle-ai-codex.png missing ]</span></div>
       </div>
-      <figcaption class="small" style="margin-top:10px; text-align:center;">Already listed — <strong>Codex</strong> plugin store</figcaption>
+      <figcaption class="small" style="margin-top:10px; text-align:center;">Already listed - <strong>Codex</strong> plugin store</figcaption>
     </figure>
   </div>
 
   <div class="note" style="margin-top: 22px;">
     <strong>The app keeps the lights on; the AI integration is the moat.</strong> Same foundation,
     surfaced two ways: the familiar UI for users who live in the platform, and a first-class
-    connector in the AI marketplaces — Claude's connector directory, the Codex / ChatGPT plugin
+    connector in the AI marketplaces - Claude's connector directory, the Codex / ChatGPT plugin
     stores (MCP + API are the rails; the customer never thinks about them). It runs on the
-    customer's own AI subscription — no LLM cost or lock-in on our side.
+    customer's own AI subscription - no LLM cost or lock-in on our side.
     <strong>Next: what that conversation looks like →</strong>
   </div>
 </section>
 
-<!-- ============================================== SLIDE 10: SIMULATED CHAT -->
+<!-- ============================================== SLIDE 09: SIMULATED CHAT -->
 <section class="slide">
-  <span class="slide-num mono">10 / 15</span>
+  <span class="slide-num mono">09 / 13</span>
   <p class="eyebrow">What it feels like in practice</p>
   <h2 class="section">The conversation an AM actually has.</h2>
   <p class="lead">
-    Illustrative — one account-management flow: ask, act, then expand, all inside the
-    assistant the AM already uses. It doesn't just answer — it drafts, reminds, and
+    Illustrative - one account-management flow: ask, act, then expand, all inside the
+    assistant the AM already uses. It doesn't just answer - it drafts, reminds, and
     tells you what <em>not</em> to do.
   </p>
 
@@ -893,12 +918,12 @@
         <div style="padding:8px 6px; color:var(--ink-soft);">Projects</div>
         <div style="padding:8px 6px 12px; color:var(--ink-soft);">Artifacts</div>
         <div style="padding:8px 6px 4px; color:var(--ink-faint); font-size:11px; text-transform:uppercase; letter-spacing:0.06em;">Pinned</div>
-        <div style="padding:5px 6px;">Xperience — account review</div>
+        <div style="padding:5px 6px;">Xperience - account review</div>
         <div style="padding:5px 6px;">BeeCastle MCP</div>
         <div style="padding:12px 6px 4px; color:var(--ink-faint); font-size:11px; text-transform:uppercase; letter-spacing:0.06em;">Recents</div>
         <div style="padding:5px 6px; color:var(--ink);">Harbourline renewal risk</div>
         <div style="padding:5px 6px;">Q3 churn watchlist</div>
-        <div style="padding:5px 6px;">Whitespace — automation</div>
+        <div style="padding:5px 6px;">Whitespace - automation</div>
         <div style="padding:5px 6px;">Meridian stakeholder map</div>
         <div style="margin-top:14px; padding:8px 6px; border-top:1px solid var(--line); display:flex; align-items:center; gap:8px; color:var(--ink-soft);">
           <span style="width:18px;height:18px;border-radius:50%;background:#d97757;"></span> Colin · Max
@@ -910,9 +935,9 @@
 
         <!-- breadcrumb -->
         <div style="display:flex; align-items:center; gap:8px; padding:13px 18px; border-bottom:1px solid var(--line); color:var(--ink-dim); font-size:13px;">
-          <span>Xperience — account review</span>
+          <span>Xperience - account review</span>
           <span style="color:var(--ink-faint);">/</span>
-          <span style="color:var(--ink);">Harbourline IT — renewal review</span>
+          <span style="color:var(--ink);">Harbourline IT - renewal review</span>
           <span style="color:var(--ink-faint);">⌄</span>
           <span style="margin-left:auto; color:var(--ink-faint);">↗</span>
         </div>
@@ -935,8 +960,7 @@
 ────────────    ─────────────    ───────────
 Health score    58 / 100         ↓ 13  (30d)
 Revenue (MRR)   $6,200           flat · 6 mo
-Renewal         in 41 days       —
-Last touch      billing query    unresolved</pre>
+Renewal         in 41 days - Last touch      billing query    unresolved</pre>
               <p style="margin:0;"><strong>Recommended call plan:</strong> resolve billing first, confirm the renewal owner, bring uptime/value numbers. Don't lead with upsell.</p>
             </div>
           </div>
@@ -954,10 +978,10 @@ Last touch      billing query    unresolved</pre>
                 <span style="display:inline-flex; align-items:center; gap:8px; font-size:12px; color:var(--ink-dim); border:1px solid var(--line); border-radius:7px; padding:4px 10px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--success);"></span>Used <span class="mono" style="color:var(--ink);">create_reminder</span> · Tomorrow 9:00am</span>
                 <span style="display:inline-flex; align-items:center; gap:8px; font-size:12px; color:var(--ink-dim); border:1px solid var(--line); border-radius:7px; padding:4px 10px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--success);"></span>Used <span class="mono" style="color:var(--ink);">draft_customer_email</span></span>
               </div>
-              <p style="margin:0 0 10px;">Done — reminder set for 9:00am. Draft ready:</p>
+              <p style="margin:0 0 10px;">Done - reminder set for 9:00am. Draft ready:</p>
               <div style="border:1px solid var(--line); border-radius:10px; overflow:hidden;">
-                <div style="background:var(--paper-2); border-bottom:1px solid var(--line); padding:8px 14px; font-size:12px; color:var(--ink-dim);">✎ &nbsp;Email draft — to Sarah · "Quick 20 min before renewal"</div>
-                <div style="padding:12px 16px; background:#fff; color:var(--ink);">Hi Sarah — I noticed the billing question from a few weeks ago still hasn't been properly wrapped up. That's on us. Could we grab 20 minutes this week to close it out and check there's nothing else you need before renewal?</div>
+                <div style="background:var(--paper-2); border-bottom:1px solid var(--line); padding:8px 14px; font-size:12px; color:var(--ink-dim);">✎ &nbsp;Email draft - to Sarah · "Quick 20 min before renewal"</div>
+                <div style="padding:12px 16px; background:#fff; color:var(--ink);">Hi Sarah - I noticed the billing question from a few weeks ago still hasn't been properly wrapped up. That's on us. Could we grab 20 minutes this week to close it out and check there's nothing else you need before renewal?</div>
               </div>
             </div>
           </div>
@@ -972,7 +996,7 @@ Last touch      billing query    unresolved</pre>
             <div style="flex:0 0 24px; width:24px; height:24px; border-radius:6px; background:#d97757; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px;">✦</div>
             <div style="min-width:0; flex:1;">
               <div style="display:inline-flex; align-items:center; gap:8px; font-size:12px; color:var(--ink-dim); border:1px solid var(--line); border-radius:7px; padding:4px 10px; margin-bottom:12px;"><span style="width:6px;height:6px;border-radius:50%;background:var(--success);"></span>Used <span class="mono" style="color:var(--ink);">find_whitespace_opportunities</span></div>
-              <p style="margin:0 0 10px;">There is whitespace — <strong>automation</strong> and <strong>executive reporting</strong>. But don't lead with it. Ask this instead:</p>
+              <p style="margin:0 0 10px;">There is whitespace - <strong>automation</strong> and <strong>executive reporting</strong>. But don't lead with it. Ask this instead:</p>
               <div style="border-left:3px solid #d97757; background:var(--honey-bg); border-radius:0 8px 8px 0; padding:10px 14px; font-style:italic; color:var(--ink-soft);">
                 Once we've sorted billing, are there any manual reporting or admin workflows your team still wants to clean up this quarter?
               </div>
@@ -1001,227 +1025,153 @@ Last touch      billing query    unresolved</pre>
 
   <p class="small" style="margin-top: 14px;">
     Mock conversation, real tool names. It reads the account, acts (reminder + email), and
-    coaches the judgement call — that's the product, not a dashboard.
+    coaches the judgement call - that's the product, not a dashboard.
   </p>
 </section>
 
-<!-- ============================================== SLIDE 11: THE PITCH -->
+<!-- ============================================== SLIDE 10: THE PITCH -->
 <section class="slide cover" style="background: var(--gunmetal); color: var(--gunmetal-soft);">
-  <span class="slide-num mono" style="color: var(--ink-faint);">11 / 15</span>
+  <span class="slide-num mono" style="color: var(--ink-faint);">10 / 13</span>
   <div>
     <p class="eyebrow" style="color: var(--honey);">You've seen the what &amp; why</p>
     <h1 class="title" style="color:white; font-size:96px; line-height:1;">The <span class="honey">Pitch</span>.</h1>
     <p class="lead" style="color: var(--gunmetal-soft); max-width:680px; margin-top:8px;">
-      Milestones, money, and the decision — laid out plainly.
+      Milestones, money, and the decision - laid out plainly.
     </p>
   </div>
 </section>
 
-<!-- ============================================== SLIDE 12: MILESTONES -->
+<!-- ============================================== SLIDE 11: MILESTONES -->
 <section class="slide">
-  <span class="slide-num mono">12 / 15</span>
+  <span class="slide-num mono">11 / 13</span>
   <p class="eyebrow">Delivery &amp; payment</p>
-  <h2 class="section">One engagement. Four milestones.</h2>
+  <h2 class="section">Two payments. Both tied to proof.</h2>
   <p class="lead">
-    Each has a date and a clear trigger. BeeCastle pays the first two (<strong>$20K + $20K</strong>);
-    the third is <strong>cloud-funded</strong>; the fourth is a <strong>growth share</strong> —
-    it only pays if the rebuild actually wins new clients. Two of four cost BeeCastle budget.
+    <strong>$25K to commit</strong> - I keep building from today; BeeCastle invoices &amp; pays
+    1 Jul 2026 (FY27), unless I've found a reason it won't work. <strong>$50K when the first
+    customer is live</strong>, paid out of the dead legacy bill, not the budget. Plus 2% equity.
+    That's the whole deal.
   </p>
 
-  <div class="timeline" style="grid-template-columns: repeat(4, 1fr);">
+  <div class="timeline" style="grid-template-columns: repeat(3, 1fr);">
     <div class="tl-step">
       <div class="tl-dot">1</div>
-      <h4>Build starts</h4>
-      <div class="when mono">Signing → Jun 2026 · <strong>$20,000</strong></div>
-      <p>Engagement kicks off. Schema, seeder, hardened spikes. Never out-of-pocket beyond this without deliverables.</p>
+      <h4>Commit</h4>
+      <div class="when mono">1 Jul 2026 (FY27) · <strong>$25,000</strong></div>
+      <p>I keep building from today, at my cost. BeeCastle invoices 1 Jul and pays the $25K - unless I've hit a fundamental reason it won't work. Good faith both ways.</p>
     </div>
     <div class="tl-step">
       <div class="tl-dot">2</div>
-      <h4>Clients can be onboarded</h4>
-      <div class="when mono">By Sep 2026 (or before) · <strong>$20,000</strong></div>
-      <p>Real customer live on M365 + ConnectWise data, scored. You can start bringing customers on.</p>
+      <h4>First customer live</h4>
+      <div class="when mono">~Sep 2026 (sooner if we can) · <strong>$50,000</strong></div>
+      <p>An existing or new customer running on the new platform - real data, daily use. Triggers the $50K, paid across FY27 from the savings.</p>
     </div>
     <div class="tl-step">
       <div class="tl-dot">3</div>
-      <h4>Live + legacy retired</h4>
-      <div class="when mono">From Nov 2026 (sooner if we can) · <strong>cloud-funded</strong></div>
-      <p>MVP in daily use, AI surface live, old stack decommissioned. Paid from cloud savings + freed legacy spend.</p>
-    </div>
-    <div class="tl-step">
-      <div class="tl-dot">4</div>
-      <h4>Growth share</h4>
-      <div class="when mono">~May–Nov 2027 · <strong>50% of new MRR</strong></div>
-      <p>For clients onboarded in this window, 50% of their net-new MRR for that client's first 6 months — then 100% to BeeCastle. Paid from new revenue, not budget.</p>
+      <h4>Legacy retired</h4>
+      <div class="when mono">Through FY27 → FY28 · <strong>pure margin</strong></div>
+      <p>Old stack decommissioned. The freed ~A$5.4K/mo repays the $50K across FY27; from FY28 it's ~A$65K/yr clear.</p>
     </div>
   </div>
 
-  <div class="grid grid-4" style="margin-top: 32px;">
+  <div class="grid grid-3" style="margin-top: 32px;">
     <div class="card">
-      <div class="stat-label">M1 · $20,000 · by Jun 2026</div>
-      <p style="margin-top: 8px;">Build kicks off on the de-risked foundation. Demo: the BeeCastle mock org, every screen populated.</p>
-    </div>
-    <div class="card">
-      <div class="stat-label">M2 · $20,000 · by Sep 2026</div>
-      <p style="margin-top: 8px;">Real customer data flowing + scored. Demo: send an email, refresh, watch the score and feed move.</p>
+      <div class="stat-label">$25K · commit · 1 Jul 2026 (FY27)</div>
+      <p style="margin-top: 8px;">I'm building now, before a dollar moves. The $25K is invoiced &amp; paid 1 Jul (FY27) - provided I haven't surfaced a blocker that means it won't work.</p>
     </div>
     <div class="card honey">
-      <div class="stat-label">M3 · from Nov 2026 · cloud-funded</div>
-      <p style="margin-top: 8px;">MVP in daily use, AI surface live, legacy decommissioned. Funded by verified cloud savings — next slide.</p>
+      <div class="stat-label">$50K · first customer live</div>
+      <p style="margin-top: 8px;">Vests when a production customer is live on the new platform. Paid over FY27 from the freed legacy AWS/Mongo bill (~A$5.4K/mo); self-liquidating in year one, ~A$65K/yr clear after.</p>
     </div>
     <div class="card honey">
-      <div class="stat-label">M4 · May–Nov 2027 · growth share</div>
-      <p style="margin-top: 8px;">50% of net-new MRR from clients onboarded in the window, each for their first 6 months. Pays only if growth lands.</p>
+      <div class="stat-label">+ 2% equity · alignment</div>
+      <p style="margin-top: 8px;">2-yr vest, 6-mo cliff, accelerates on change-of-control. I'm in this for BeeCastle living - not invoicing a corpse.</p>
     </div>
   </div>
 </section>
 
-<!-- ============================================== SLIDE 13: SAVINGS SHARE -->
+<!-- ============================================== SLIDE 12: PRICING -->
 <section class="slide">
-  <span class="slide-num mono">13 / 15</span>
-  <p class="eyebrow">How Milestone 3 funds itself</p>
-  <h2 class="section">Milestone 3 is paid by the cloud, not the budget.</h2>
+  <span class="slide-num mono">12 / 13</span>
+  <p class="eyebrow">The ask</p>
+  <h2 class="section">$75K to keep BeeCastle alive - and it pays for itself.</h2>
   <p class="lead">
-    Retiring the legacy stack erases its AWS + Mongo bill; the new stack runs for a fraction.
-    <strong>Milestone 3 is funded from that gap</strong> — it pays out <strong>70% of the verified
-    saving</strong> over the first six months post go-live, vs the locked baseline. No saving, no M3.
-    (Baseline is USD — the cloud invoices are; fixed fees are AUD.)
-  </p>
-
-  <div class="grid grid-3" style="margin-top: 28px;">
-    <div class="card">
-      <div class="stat-label">AWS baseline</div>
-      <div class="stat">US$19.9K</div>
-      <p class="small">Last 6 months visible in Cost Explorer: US$19,914.05 total, US$3,319.01/month average.</p>
-    </div>
-    <div class="card">
-      <div class="stat-label">Mongo baseline</div>
-      <div class="stat">US$9.7K</div>
-      <p class="small">Last 6 completed invoice periods visible: US$9,666.39 total, US$1,611.07/month average.</p>
-    </div>
-    <div class="card honey">
-      <div class="stat-label">Combined baseline</div>
-      <div class="stat honey">US$29.6K</div>
-      <p class="small">Six-month AWS + Mongo run-rate before replacement infra is netted out.</p>
-    </div>
-  </div>
-
-  <div class="grid grid-2" style="margin-top: 28px;">
-    <div class="card">
-      <h3>The formula</h3>
-      <table style="margin-top: 12px;">
-        <tbody>
-          <tr><td>Old run-rate (US$4,930 @ ~1.5)</td><td class="num">~A$7.4K/mo</td></tr>
-          <tr><td>Less new run-rate</td><td class="num">~A$2.0K/mo</td></tr>
-          <tr class="total"><td>Verified monthly saving</td><td class="num">~A$5.4K/mo</td></tr>
-          <tr class="honey"><td>Funds Milestone 3</td><td class="num">70% × 6 months</td></tr>
-        </tbody>
-      </table>
-      <p class="small" style="margin-top: 12px;">Estimated all-in replacement run-rate <strong>&lt; ~A$2K/mo</strong> (hosting + DB + compute) — even with Google Workspace and a per-client test org on top of prod. LLM/AI compute runs on customers' own keys, so it never enters our run-rate. Measured from billing exports; success fee converts to AUD at payment time.</p>
-    </div>
-    <div class="card dark">
-      <h3>Planning example — Milestone 3</h3>
-      <p>Cut the combined run-rate ~70% → six-month verified saving ≈ <strong style="color:white;">A$32K</strong> est.</p>
-      <p>At 70%, <strong style="color:white;">Milestone 3 ≈ A$23K</strong> est. — paid from that saving, not the operating budget.</p>
-      <p>~<strong style="color:white;">A$10K</strong> stays with BeeCastle in the 6-month window, then 100% of the saving after.</p>
-    </div>
-  </div>
-
-  <div class="note" style="margin-top: 28px;">
-    <strong>Important guardrail.</strong> Only count addressable runtime savings. Any AWS spend unrelated to the legacy BeeCastle workload is excluded before the baseline is locked.
-  </div>
-</section>
-
-<!-- ============================================== SLIDE 14: PRICING -->
-<section class="slide">
-  <span class="slide-num mono">14 / 15</span>
-  <p class="eyebrow">The ask — and the payback</p>
-  <h2 class="section">$40K fixed. Then it pays you back.</h2>
-  <p class="lead">
-    <strong>BeeCastle's real exposure is $20K, not $40K.</strong> The second $20K is paid only
-    once a real client <em>can</em> be onboarded (M2) — no working milestone, no payment.
-    Milestone 3 (≈A$23K, my 70% of cloud savings, Nov 26–May 27) is funded by the savings;
-    the $40K is clawed back by ~Nov 2027, pure profit after. M4 shares new-client revenue — upside only.
+    Two payments: <strong>$25K to commit</strong> (1 Jul 2026, FY27) and <strong>$50K when the
+    first customer is live</strong>, paid from the dead legacy bill. Plus 2% equity. That replaces
+    an 8-year, $12M-COCOMO stack, ends the sync-failure churn, and frees ~A$65K/yr - it
+    self-liquidates inside FY27.
   </p>
 
   <div class="grid grid-3" style="margin-top: 22px;">
     <div class="card">
-      <div class="stat-label">M1 · by end Jun 2026</div>
-      <div class="stat">$20K</div>
-      <p class="small" style="margin:6px 0 0;">Build starts on the de-risked foundation. <strong>Running total: $20K.</strong></p>
-    </div>
-    <div class="card">
-      <div class="stat-label">M2 · only if clients can be onboarded</div>
-      <div class="stat">+$20K</div>
-      <p class="small" style="margin:6px 0 0;">Contingent on a working M2 — no demo, no payment. <strong>Running total: $40K, the entire fixed cash.</strong></p>
+      <div class="stat-label">Commit · 1 Jul 2026 (FY27)</div>
+      <div class="stat">$25K</div>
+      <p class="small" style="margin:6px 0 0;">Build's already moving - Milestone A done. <strong>Running total: $25K.</strong></p>
     </div>
     <div class="card honey">
-      <div class="stat-label">M3 · Nov 2026 → May 2027</div>
-      <div class="stat honey">≈A$23K</div>
-      <p class="small" style="margin:6px 0 0;">My 70% of cloud savings over 6 months — BeeCastle pays less than the old bill from day one. <strong>All-in ≈ A$63K.</strong></p>
+      <div class="stat-label">First customer live · from savings</div>
+      <div class="stat honey">+$50K</div>
+      <p class="small" style="margin:6px 0 0;">Vests on a live production customer; paid over FY27 from the freed legacy bill. <strong>Running total: $75K.</strong></p>
+    </div>
+    <div class="card honey">
+      <div class="stat-label">+ 2% equity · alignment</div>
+      <div class="stat honey">2%</div>
+      <p class="small" style="margin:6px 0 0;">Common stock · 2-yr vest, 6-mo cliff, accelerates on change-of-control. Upside, not an extra cash ask.</p>
     </div>
   </div>
 
   <div class="grid grid-2" style="margin-top: 22px; align-items:start;">
     <div class="card">
-      <h3>The math — per month (AUD est.)</h3>
-      <table style="margin-top: 12px;">
-        <tbody>
-          <tr><td>Old hosting — gone</td><td class="num">~A$7.4K</td></tr>
-          <tr><td>New run-rate</td><td class="num">~A$2.0K</td></tr>
-          <tr class="total"><td>Monthly saving</td><td class="num">~A$5.4K</td></tr>
-        </tbody>
-      </table>
-      <p class="small" style="margin-top:12px;">First 6 months the saving is split — my Milestone 3 = 70% (≈A$23K); BeeCastle keeps 30% and is <strong>still ahead of the old bill from day one</strong>. After that BeeCastle keeps <strong>100% (~A$65K/yr)</strong>. The $40K is repaid from savings within ~12 months of go-live — clear profit after.</p>
+      <h3>Why $75K is the floor, not the ask</h3>
+      <p class="small" style="margin:8px 0 0;">Priced on what it's worth, not hours: ~<strong>A$65K/yr saved forever</strong>, the sync-failure churn stopped, an 8-year / $12M-COCOMO stack retired - BeeCastle kept alive with an AI-native moat. $75K self-liquidates inside FY27. No hourly meter; both payments gated on proof.</p>
     </div>
-    <div>
-      <div class="card honey">
-        <h3>+ Equity sliver</h3>
-        <p style="margin:6px 0 0;"><strong>1.5% common stock</strong>, earned over 2 years — nothing for the first 6 months, then it accrues monthly. Leave early, keep only what's vested. Alignment, not an extra cash ask.</p>
-      </div>
-      <div class="card honey" style="margin-top:14px;">
-        <h3>M4 · Growth share</h3>
-        <p style="margin:6px 0 0;">~May–Nov 2027: <strong>50% of net-new MRR</strong> from clients onboarded then, each for their first 6 months — then 100% to BeeCastle. Variable: it pays only if the rebuild wins clients. New revenue, never budget.</p>
-      </div>
+    <div class="card honey">
+      <h3>Optional - I'll drive the conversion</h3>
+      <p class="small" style="margin:8px 0 0;">Since I built it, I'll onboard &amp; convert customers myself. For clients <strong>I personally land</strong>: <strong>50% of net-new MRR for their first 3 months</strong>, then 100% to BeeCastle. Net-new only - never the existing book. New revenue, never budget.</p>
     </div>
   </div>
 
   <div class="note" style="margin-top: 18px;">
-    <strong>All-in to Colin ≈ A$63K + growth share</strong> — $40K fixed cash ($20K + $20K) + ≈A$23K
-    Milestone 3 (from cloud savings) + 1.5% equity + M4 (50% of net-new MRR for 6 months — variable,
-    only if the rebuild wins clients). M3 is redirected cloud spend and M4 is new revenue — neither is incremental budget.
+    <strong>All-in: $75K cash ($25K + $50K) + 2% equity.</strong> The $50K is the legacy bill
+    redirected, not new budget; the conversion share (only if I drive it) is revenue that didn't
+    exist. Neither is incremental spend.
   </div>
 
   <p class="small" style="margin-top: 16px;">
-    AUD est.; cloud invoices are USD, converted ~1.5. Savings depend on the locked baseline and final
-    run-rate — planning figures, measured from billing exports, not a guarantee.
+    AUD; cloud invoices are USD, converted ~1.5. Savings are measured from billing exports against a
+    locked baseline - planning figures, not a guarantee.
   </p>
 </section>
 
-<!-- ============================================== SLIDE 15: GO / NO-GO -->
+<!-- ============================================== SLIDE 13: GO / NO-GO -->
 <section class="slide cover" style="background: var(--gunmetal); color: var(--gunmetal-soft);">
-  <span class="slide-num mono" style="color: var(--ink-faint);">15 / 15</span>
+  <span class="slide-num mono" style="color: var(--ink-faint);">13 / 13</span>
   <div>
     <p class="eyebrow" style="color: var(--honey);">The decision</p>
     <h1 class="title" style="color: white;">This is a go / no-go.<br/><span class="honey">Sign the scope. Sign the milestones.</span></h1>
     <p class="lead" style="color: var(--gunmetal-soft); max-width: 780px;">
       The spikes proved the hard parts. The architecture is decided. Sign now → real customer
-      live by ~November 2026 (≈8 weeks of build, delivered across the milestones). It's a yes or a no.
+      live by ~September 2026 (≈8 weeks of build, delivered across the milestones). It's a yes or a no.
     </p>
 
     <div class="grid grid-3" style="margin-top: 48px;">
       <div class="card dark" style="background: var(--gunmetal-2); border-color: #3a3f47;">
         <div class="stat-label" style="color: var(--ink-faint);">1 · Confirm scope</div>
-        <p style="color: var(--gunmetal-soft); margin-top: 8px;">Sign off the MVP scope as the deliverable list — the demo we ship toward.</p>
+        <p style="color: var(--gunmetal-soft); margin-top: 8px;">Sign off the MVP scope as the deliverable list - the demo we ship toward.</p>
       </div>
       <div class="card dark" style="background: var(--gunmetal-2); border-color: #3a3f47;">
-        <div class="stat-label" style="color: var(--ink-faint);">2 · Sign the milestones</div>
-        <p style="color: var(--gunmetal-soft); margin-top: 8px;">$20K signing + $20K clients-live. Milestone 3 cloud-funded. 1.5% equity sliver.</p>
+        <div class="stat-label" style="color: var(--ink-faint);">2 · Sign the deal</div>
+        <p style="color: var(--gunmetal-soft); margin-top: 8px;">$25K commit (1 Jul, FY27) + $50K on first customer (from savings). 2% equity. Optional conversion share.</p>
       </div>
       <div class="card dark" style="background: var(--gunmetal-2); border-color: #3a3f47;">
         <div class="stat-label" style="color: var(--ink-faint);">3 · One-page contract</div>
         <p style="color: var(--gunmetal-soft); margin-top: 8px;">A one-page scope-of-work that references this deck verbatim. No surprises.</p>
       </div>
     </div>
+
+    <p style="margin-top: 34px; color: var(--gunmetal-soft); max-width: 840px; font-size: 14px;">
+      <strong style="color:#fff;">Next step: demo &amp; discuss.</strong> Fair warning: it looks further along than it is, and there's real work left to ship. But I'm <strong style="color: var(--honey);">~80% confident the spike has proven feasibility of the hard, expensive parts</strong> of the legacy system. That's the bet on the table.
+    </p>
   </div>
 </section>
 
@@ -1325,6 +1275,29 @@ Last touch      billing query    unresolved</pre>
     } else {
       prevBtn.disabled = true;
       dots[0].classList.add('active');
+    }
+
+    // Auto-hide the nav so it never sits over slide content,
+    // and reappears the moment the presenter moves/keys.
+    const navEl = document.querySelector('.nav-controls');
+    if (navEl) {
+      navEl.style.transition = 'opacity 350ms ease';
+      let navIdle;
+      const showNav = () => {
+        navEl.style.opacity = '1';
+        navEl.style.pointerEvents = 'auto';
+        clearTimeout(navIdle);
+        navIdle = setTimeout(() => {
+          navEl.style.opacity = '0';
+          navEl.style.pointerEvents = 'none';
+        }, 2600);
+      };
+      ['mousemove', 'keydown', 'touchstart', 'click'].forEach((ev) =>
+        document.addEventListener(ev, showNav, { passive: true })
+      );
+      navEl.addEventListener('mouseenter', () => { clearTimeout(navIdle); navEl.style.opacity = '1'; });
+      navEl.addEventListener('mouseleave', showNav);
+      showNav();
     }
   })();
 </script>
