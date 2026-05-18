@@ -553,20 +553,18 @@
       <p class="small" style="color: var(--gunmetal-soft);">beecastle-web alone is 220K LOC; bc-notifications another 66K - behaviour nobody wrote a spec for.</p>
     </div>
     <div class="card" style="background: rgba(255,204,0,0.10); border:1px solid var(--honey);">
-      <div class="stat-label" style="color: var(--honey);">Rebuild cost, the old way</div>
-      <div class="stat" style="color: var(--honey);">$12M</div>
-      <p class="small" style="color: var(--gunmetal-soft);">COCOMO estimate for the retired surface - ~30 person-years, ~35 months. The accumulated liability, not a quote.</p>
+      <div class="stat-label" style="color: var(--honey);">Rebuild effort, the old way</div>
+      <div class="stat" style="color: var(--honey);">~90<span class="unit"> person-yrs</span></div>
+      <p class="small" style="color: var(--gunmetal-soft);">COCOMO to rebuild the retired surface from scratch: ~30 engineers, ~3 years. The accumulated effort, not a price.</p>
     </div>
   </div>
 
-  <div class="note" style="margin-top: 28px; background: rgba(196,59,59,0.12); border-left: 3px solid var(--danger); color: var(--gunmetal-soft);">
-    <strong style="color:#fff;">And it's bleeding.</strong> Heavy customer churn, continual downtime,
-    missed syncs - held together by a <strong style="color:#fff;">skeleton crew</strong> (realistically
-    one part-time engineer). It isn't maintainable as-is; the rewrite is what makes it runnable by a small team.
+  <div class="note" style="margin-top: 28px; background: rgba(196,59,59,0.12); border-left: 4px solid var(--danger); color: var(--gunmetal-soft); font-size: 17px; line-height: 1.5;">
+    <strong style="color:#fff;">It's bleeding.</strong> Churn, downtime, missed syncs - run by a skeleton crew of one, part-time. Not maintainable as-is.
   </div>
 
-  <div class="note" style="margin-top: 16px; background: rgba(255,204,0,0.08); border-left: 3px solid var(--honey); color: var(--gunmetal-soft);">
-    <strong style="color:#fff;">Why I built it first.</strong> After our call last week - you open to a rewrite - I pulled together what I'd already been proving out this year (the new O365 → Lambda/SQS sync, the cumulative tests) and, with how fast LLM-paired build now moves, went ahead and <strong style="color:#fff;">spiked it to prove the approach</strong>. It works - the next slides show it running.
+  <div class="note" style="margin-top: 16px; background: rgba(255,204,0,0.08); border-left: 4px solid var(--honey); color: var(--gunmetal-soft); font-size: 17px; line-height: 1.5;">
+    <strong style="color:#fff;">Why I built it first.</strong> You're open to a rewrite - so I spiked it and proved the hard parts. The next slides show it running.
   </div>
 </section>
 
@@ -581,10 +579,10 @@
     <div class="card muted" style="padding: 14px 18px;">
       <h3 style="margin-bottom: 6px;">Today - event-sourced sprawl</h3>
       <ul class="clean" style="font-size: 13px;">
-        <li style="padding:4px 0;"><strong>bc-es</strong>Bespoke event store + CQRS - glue nobody else maintains</li>
-        <li style="padding:4px 0;"><strong>3× ClojureScript Lambdas</strong>M365 · ConnectWise · cron · + bc-notifications (Clojure)</li>
-        <li style="padding:4px 0;"><strong>beecastle-web</strong>Separate React frontend (220K LOC)</li>
-        <li style="padding:4px 0;"><strong style="color:var(--ink);">11 repos · 3 languages</strong>+ bc-api, Keycloak, admin, loaders - an event bus between them all</li>
+        <li style="padding:4px 0;"><strong>bc-es · bc-api</strong>Node event-sourcing + CQRS + REST gateway - the JS glue nobody else maintains</li>
+        <li style="padding:4px 0;"><strong>beecastle-web</strong>Separate React frontend - 220K LOC</li>
+        <li style="padding:4px 0;"><strong>bc-notifications · bc-admin</strong>Massive standalone Clojure / ClojureScript apps - jobs, scoring, admin</li>
+        <li style="padding:4px 0;"><strong style="color:var(--ink);">+ native webhook Lambdas + tail</strong>M365 · CW · cron (Clojure) · Keycloak · loaders - 11 repos, 3 languages, an event bus between them all</li>
       </ul>
     </div>
     <div class="arrow mono">→</div>
@@ -666,19 +664,11 @@
   <div class="grid grid-3" style="margin-top: 24px;">
     <div class="card" style="border-top: 3px solid var(--danger);">
       <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
-        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg></span>
-        <h3 style="margin:0;">Silent sync failures</h3>
+        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></span>
+        <h3 style="margin:0;">Syncs &amp; services just stop</h3>
       </div>
-      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Data goes stale and customers find it first.</p>
-      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Retryable, observable syncs.</p>
-    </div>
-    <div class="card" style="border-top: 3px solid var(--danger);">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
-        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"></rect><rect x="2" y="14" width="20" height="8" rx="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg></span>
-        <h3 style="margin:0;">Services stop</h3>
-      </div>
-      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Queues/workers die and features disappear.</p>
-      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Fewer services, health checks, dead letters.</p>
+      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Queues/workers die, syncs silently fail - data goes stale and customers notice first.</p>
+      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Retryable, observable syncs + health checks + dead letters.</p>
     </div>
     <div class="card" style="border-top: 3px solid var(--danger);">
       <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
@@ -706,16 +696,20 @@
     </div>
     <div class="card" style="border-top: 3px solid var(--danger);">
       <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
-        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></span>
-        <h3 style="margin:0;">Support login is broken</h3>
+        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="4"></circle><line x1="4.93" y1="4.93" x2="9.17" y2="9.17"></line><line x1="14.83" y1="14.83" x2="19.07" y2="19.07"></line><line x1="14.83" y1="9.17" x2="19.07" y2="4.93"></line><line x1="4.93" y1="19.07" x2="9.17" y2="14.83"></line></svg></span>
+        <h3 style="margin:0;">Supporting it is broken</h3>
       </div>
-      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Shared accounts, 1Password hacks, poor auditability.</p>
-      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> Proper impersonation and account switching.</p>
+      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> Every fix is a manual ops slog - shared logins, no audit, nothing self-serve.</p>
+      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> In-app impersonation, audit trail, self-serve repair.</p>
     </div>
-  </div>
-
-  <div class="note" style="margin-top: 26px;">
-    Every card is a <strong>real, recurring case from the live support log</strong> (36 case folders · 614 repair scripts). The rewrite removes the cause, not the symptom.
+    <div class="card" style="border-top: 3px solid var(--danger);">
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+        <span style="flex:0 0 30px; width:30px; height:30px; border-radius:8px; background:var(--danger-soft); color:var(--danger); display:inline-flex; align-items:center; justify-content:center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+        <h3 style="margin:0;">Glacial deploys</h3>
+      </div>
+      <p class="small" style="margin: 8px 0 10px;"><span class="pill" style="font-size:11px;">Today</span> ~45 min to ship one bc-notifications version - too slow to push a fix, let alone iterate.</p>
+      <p class="small" style="margin: 0;"><span class="pill success" style="font-size:11px;">✓&nbsp;Rewrite</span> One repo, one CI - deploys in minutes.</p>
+    </div>
   </div>
 </section>
 
@@ -727,8 +721,7 @@
   <p class="lead">
     Before asking you to commit, we spiked the parts that carry real risk - multi-tenant
     isolation, ConnectWise + Microsoft 365 sync, the MCP/AI surface, scoring, the two-org
-    posture. Not finished - <strong>confirmed working</strong>. We billed a sliver and sank
-    the rest in ourselves to make the first bet.
+    posture. Not finished - <strong>confirmed working</strong>.
   </p>
 
   <div class="grid grid-3" style="margin-top: 24px;">
@@ -739,7 +732,7 @@
     </div>
     <div class="card">
       <div class="stat-label">Sank in ourselves</div>
-      <div class="stat">~30<span class="unit">hrs+</span></div>
+      <div class="stat">~40<span class="unit">hrs+</span></div>
       <p class="small">Uncharged - building, de-risking &amp; proving it before the ask.</p>
     </div>
     <div class="card">
@@ -753,16 +746,16 @@
     <h3 style="margin-bottom: 14px;">Confirmed working in a spike - running, not slideware</h3>
     <div class="grid grid-2">
       <ul class="clean">
-        <li><span class="check">✓</span> <strong>Multi-tenant isolation</strong> - Better Auth + Postgres RLS, the tenant boundary enforced at the database</li>
-        <li><span class="check">✓</span> <strong>ConnectWise sync</strong> - real companies, contacts <strong>+ tickets</strong> through the new pipeline <em>(the tickets Dave's been asking about)</em></li>
-        <li><span class="check">✓</span> <strong>Microsoft 365 sync</strong> - inbox connect + Graph; real engagement flowing in</li>
-        <li><span class="check">✓</span> <strong>Scoring</strong> - health-score pipeline spiked against real interactions</li>
+        <li style="display:flex; gap:13px; align-items:flex-start;"><span style="flex:0 0 26px; width:26px; height:26px; border-radius:50%; background:var(--success); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-top:1px;">✓</span><span><strong>Multi-tenant isolation</strong>Better Auth + Postgres RLS, the tenant boundary enforced at the database</span></li>
+        <li style="display:flex; gap:13px; align-items:flex-start;"><span style="flex:0 0 26px; width:26px; height:26px; border-radius:50%; background:var(--success); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-top:1px;">✓</span><span><strong>ConnectWise sync</strong>Real companies, contacts <strong style="display:inline">+ tickets</strong> through the new pipeline <em>(the tickets Dave's been asking about)</em></span></li>
+        <li style="display:flex; gap:13px; align-items:flex-start;"><span style="flex:0 0 26px; width:26px; height:26px; border-radius:50%; background:var(--success); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-top:1px;">✓</span><span><strong>Microsoft 365 sync</strong>Inbox connect + Graph; real engagement flowing in</span></li>
+        <li style="display:flex; gap:13px; align-items:flex-start;"><span style="flex:0 0 26px; width:26px; height:26px; border-radius:50%; background:var(--success); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-top:1px;">✓</span><span><strong>Scoring</strong>Health-score pipeline spiked against real interactions</span></li>
       </ul>
       <ul class="clean">
-        <li><span class="check">✓</span> <strong>MCP / AI surface</strong> - BeeCastle reachable from Claude &amp; Codex; endpoint stood up</li>
-        <li><span class="check">✓</span> <strong>Admin + impersonation</strong> - staff console, org switching, audit trail</li>
-        <li><span class="check">✓</span> <strong>Two orgs, one codebase</strong> - seeded mock org + real-customer org, identical queries</li>
-        <li><span class="check">✓</span> <strong>Local prod parity</strong> - Postgres 18, Redis, SQS, mail - reproducible</li>
+        <li style="display:flex; gap:13px; align-items:flex-start;"><span style="flex:0 0 26px; width:26px; height:26px; border-radius:50%; background:var(--success); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-top:1px;">✓</span><span><strong>MCP / AI surface</strong>BeeCastle reachable from Claude &amp; Codex; endpoint stood up</span></li>
+        <li style="display:flex; gap:13px; align-items:flex-start;"><span style="flex:0 0 26px; width:26px; height:26px; border-radius:50%; background:var(--success); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-top:1px;">✓</span><span><strong>Admin + impersonation</strong>Staff console, org switching, audit trail</span></li>
+        <li style="display:flex; gap:13px; align-items:flex-start;"><span style="flex:0 0 26px; width:26px; height:26px; border-radius:50%; background:var(--success); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-top:1px;">✓</span><span><strong>Two orgs, one codebase</strong>Seeded mock org + real-customer org, identical queries</span></li>
+        <li style="display:flex; gap:13px; align-items:flex-start;"><span style="flex:0 0 26px; width:26px; height:26px; border-radius:50%; background:var(--success); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; margin-top:1px;">✓</span><span><strong>Local prod parity</strong>Postgres 18, Redis, SQS, mail - reproducible</span></li>
       </ul>
     </div>
   </div>
@@ -778,13 +771,13 @@
     ConnectWise data, admin + impersonation - recorded end to end.
   </p>
 
-  <a href="https://screen.studio/share/rbzfCNi0" target="_blank" rel="noopener" style="display:block; margin-top: 20px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 14px 40px rgba(0,0,0,0.16); height: clamp(280px, 56vh, 560px); background: var(--gunmetal); position: relative;">
-    <img src="assets/demo-poster.svg" alt="Play the 2-minute demo" style="width:100%; height:100%; object-fit:cover; display:block;" />
+  <a href="https://screen.studio/share/WysUoHYz" target="_blank" rel="noopener" style="display:block; margin-top: 20px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 14px 40px rgba(0,0,0,0.16); height: clamp(280px, 56vh, 560px); background: var(--gunmetal); position: relative;">
+    <img src="assets/demo-poster.svg" alt="Play the demo" style="width:100%; height:100%; object-fit:cover; display:block;" />
     <span style="position:absolute; right:16px; bottom:14px; font-size:12px; color:#C7CBD1; font-family:'Geist Mono',ui-monospace,monospace; letter-spacing:0.5px;">opens in Screen Studio ↗</span>
   </a>
 
   <p class="small" style="margin-top: 16px;">
-    ~2 min, edited &amp; sped up. Proof the approach works - the full build scope still follows in its own right.
+    Proof the approach works - the full build scope still follows in its own right.
   </p>
 </section>
 
@@ -1044,13 +1037,14 @@ Renewal         in 41 days - Last touch      billing query    unresolved</pre>
 <!-- ============================================== SLIDE 11: MILESTONES -->
 <section class="slide">
   <span class="slide-num mono">11 / 13</span>
-  <p class="eyebrow">Delivery &amp; payment</p>
-  <h2 class="section">Two payments. Both tied to proof.</h2>
+  <p class="eyebrow">The shape of the deal</p>
+  <h2 class="section">I commit first. You pay on proof.</h2>
   <p class="lead">
-    <strong>$25K to commit</strong> - I keep building from today; BeeCastle invoices &amp; pays
-    1 Jul 2026 (FY27), unless I've found a reason it won't work. <strong>$50K when the first
-    customer is live</strong>, paid out of the dead legacy bill, not the budget. Plus 2% equity.
-    That's the whole deal.
+    I'm building from today, at my own cost. A modest <strong>$25K to formally commit</strong>,
+    then <strong>commit to +$50K when the first customer is live</strong> - and that $50K
+    <strong>can take time: it's paid out of the savings from culling the legacy system and its
+    hosting</strong>, not the operating budget. Plus bonus upside if you want me in for the long
+    run. Exact numbers on the next slide.
   </p>
 
   <div class="timeline" style="grid-template-columns: repeat(3, 1fr);">
@@ -1058,34 +1052,34 @@ Renewal         in 41 days - Last touch      billing query    unresolved</pre>
       <div class="tl-dot">1</div>
       <h4>Commit</h4>
       <div class="when mono">1 Jul 2026 (FY27) · <strong>$25,000</strong></div>
-      <p>I keep building from today, at my cost. BeeCastle invoices 1 Jul and pays the $25K - unless I've hit a fundamental reason it won't work. Good faith both ways.</p>
+      <p>I keep building from today, at my cost. A good-faith $25K to formally start - unless I've hit a fundamental reason it won't work.</p>
     </div>
     <div class="tl-step">
       <div class="tl-dot">2</div>
       <h4>First customer live</h4>
-      <div class="when mono">~Sep 2026 (sooner if we can) · <strong>$50,000</strong></div>
-      <p>An existing or new customer running on the new platform - real data, daily use. Triggers the $50K, paid across FY27 from the savings.</p>
+      <div class="when mono">when it's real · <strong>+$50,000</strong></div>
+      <p>A real customer running on the new platform - daily use, real data. Triggers the +$50K, payable over time from the savings, never the budget.</p>
     </div>
     <div class="tl-step">
       <div class="tl-dot">3</div>
-      <h4>Legacy retired</h4>
-      <div class="when mono">Through FY27 → FY28 · <strong>pure margin</strong></div>
-      <p>Old stack decommissioned. The freed ~A$5.4K/mo repays the $50K across FY27; from FY28 it's ~A$65K/yr clear.</p>
+      <h4>Bonus upside</h4>
+      <div class="when mono">optional · <strong>alignment</strong></div>
+      <p>Equity and a share of new clients I bring on - upside only, only if you want me in for the long run.</p>
     </div>
   </div>
 
   <div class="grid grid-3" style="margin-top: 32px;">
     <div class="card">
       <div class="stat-label">$25K · commit · 1 Jul 2026 (FY27)</div>
-      <p style="margin-top: 8px;">I'm building now, before a dollar moves. The $25K is invoiced &amp; paid 1 Jul (FY27) - provided I haven't surfaced a blocker that means it won't work.</p>
+      <p style="margin-top: 8px;">I'm building now, before a dollar moves. A modest good-faith commit - if I surface a fundamental blocker, it doesn't proceed.</p>
     </div>
     <div class="card honey">
-      <div class="stat-label">$50K · first customer live</div>
-      <p style="margin-top: 8px;">Vests when a production customer is live on the new platform. Paid over FY27 from the freed legacy AWS/Mongo bill (~A$5.4K/mo); self-liquidating in year one, ~A$65K/yr clear after.</p>
+      <div class="stat-label">Commit to +$50K · first customer live</div>
+      <p style="margin-top: 8px;"><strong>This $50K can take time - it's funded by the savings from culling the legacy system and its hosting, not the operating budget.</strong> No customer live, no $50K.</p>
     </div>
     <div class="card honey">
-      <div class="stat-label">+ 2% equity · alignment</div>
-      <p style="margin-top: 8px;">2-yr vest, 6-mo cliff, accelerates on change-of-control. I'm in this for BeeCastle living - not invoicing a corpse.</p>
+      <div class="stat-label">Bonus · upside only</div>
+      <p style="margin-top: 8px;"><strong>Equity 2-5%</strong> for long-term alignment, <strong>plus a share of new clients I personally onboard</strong>. Optional, never the operating budget - specifics next slide.</p>
     </div>
   </div>
 </section>
@@ -1097,8 +1091,8 @@ Renewal         in 41 days - Last touch      billing query    unresolved</pre>
   <h2 class="section">$75K to keep BeeCastle alive - and it pays for itself.</h2>
   <p class="lead">
     Two payments: <strong>$25K to commit</strong> (1 Jul 2026, FY27) and <strong>$50K when the
-    first customer is live</strong>, paid from the dead legacy bill. Plus 2% equity. That replaces
-    an 8-year, $12M-COCOMO stack, ends the sync-failure churn, and frees ~A$65K/yr - it
+    first customer is live</strong>, paid from the dead legacy bill. Plus 2-5% equity. That replaces
+    an 8-year, ~90-person-year stack, ends the sync-failure churn, and frees ~A$65K/yr - it
     self-liquidates inside FY27.
   </p>
 
@@ -1114,8 +1108,8 @@ Renewal         in 41 days - Last touch      billing query    unresolved</pre>
       <p class="small" style="margin:6px 0 0;">Vests on a live production customer; paid over FY27 from the freed legacy bill. <strong>Running total: $75K.</strong></p>
     </div>
     <div class="card honey">
-      <div class="stat-label">+ 2% equity · alignment</div>
-      <div class="stat honey">2%</div>
+      <div class="stat-label">+ 2-5% equity · alignment</div>
+      <div class="stat honey">2-5%</div>
       <p class="small" style="margin:6px 0 0;">Common stock · 2-yr vest, 6-mo cliff, accelerates on change-of-control. Upside, not an extra cash ask.</p>
     </div>
   </div>
@@ -1123,7 +1117,7 @@ Renewal         in 41 days - Last touch      billing query    unresolved</pre>
   <div class="grid grid-2" style="margin-top: 22px; align-items:start;">
     <div class="card">
       <h3>Why $75K is the floor, not the ask</h3>
-      <p class="small" style="margin:8px 0 0;">Priced on what it's worth, not hours: ~<strong>A$65K/yr saved forever</strong>, the sync-failure churn stopped, an 8-year / $12M-COCOMO stack retired - BeeCastle kept alive with an AI-native moat. $75K self-liquidates inside FY27. No hourly meter; both payments gated on proof.</p>
+      <p class="small" style="margin:8px 0 0;">Priced on what it's worth, not hours: ~<strong>A$65K/yr saved forever</strong>, the sync-failure churn stopped, an 8-year / ~90-person-year stack retired - BeeCastle kept alive with an AI-native moat. $75K self-liquidates inside FY27. No hourly meter; both payments gated on proof.</p>
     </div>
     <div class="card honey">
       <h3>Optional - I'll drive the conversion</h3>
@@ -1132,7 +1126,7 @@ Renewal         in 41 days - Last touch      billing query    unresolved</pre>
   </div>
 
   <div class="note" style="margin-top: 18px;">
-    <strong>All-in: $75K cash ($25K + $50K) + 2% equity.</strong> The $50K is the legacy bill
+    <strong>All-in: $75K cash ($25K + $50K) + 2-5% equity.</strong> The $50K is the legacy bill
     redirected, not new budget; the conversion share (only if I drive it) is revenue that didn't
     exist. Neither is incremental spend.
   </div>
@@ -1161,7 +1155,7 @@ Renewal         in 41 days - Last touch      billing query    unresolved</pre>
       </div>
       <div class="card dark" style="background: var(--gunmetal-2); border-color: #3a3f47;">
         <div class="stat-label" style="color: var(--ink-faint);">2 · Sign the deal</div>
-        <p style="color: var(--gunmetal-soft); margin-top: 8px;">$25K commit (1 Jul, FY27) + $50K on first customer (from savings). 2% equity. Optional conversion share.</p>
+        <p style="color: var(--gunmetal-soft); margin-top: 8px;">$25K commit (1 Jul, FY27) + $50K on first customer (from savings). 2-5% equity. Optional conversion share.</p>
       </div>
       <div class="card dark" style="background: var(--gunmetal-2); border-color: #3a3f47;">
         <div class="stat-label" style="color: var(--ink-faint);">3 · One-page contract</div>
